@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>jQuery | accordion</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>accordion</h1>
+
+      <div class="accordion">
+        <h2 class="active">this is title 01</h2>
+        <p class="content">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex rerum
+          officiis asperiores dolorem ullam eum laudantium voluptatem, quisquam
+          consectetur officia. Veniam provident quidem aperiam aliquam, ex
+          minima voluptatum vero cupiditate.
+        </p>
+        <h2>this is title 02</h2>
+        <p class="content">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex rerum
+          officiis asperiores dolorem ullam eum laudantium voluptatem, quisquam
+          consectetur officia. Veniam provident quidem aperiam aliquam, ex
+          minima voluptatum vero cupiditate.
+        </p>
+        <h2>this is title 02</h2>
+        <p class="content">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex rerum
+          officiis asperiores dolorem ullam eum laudantium voluptatem, quisquam
+          consectetur officia. Veniam provident quidem aperiam aliquam, ex
+          minima voluptatum vero cupiditate.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var title = $('.accordion h2')
+      title.eq(0).addClass('active').next().slideDown()
+      title.click(function () {
+        $(this).toggleClass('active')
+        $(this).next().slideToggle()
+      })
+    </script>
+  </body>
+</html>

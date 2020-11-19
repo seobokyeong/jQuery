@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>jQuery | light box</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>light box</h1>
+
+      <ul class="cards">
+        <li>
+          <img src="./img/group_01.jpg" data-img="./img/group_01_big.jpg" alt="img">
+        </li>
+        <li>
+          <img src="./img/group_02.jpg" data-img="./img/group_02_big.jpg" alt="img">
+        </li>
+        <li>
+          <img src="./img/group_03.jpg" data-img="./img/group_03_big.jpg" alt="img">
+        </li>
+        <li>
+          <img src="./img/group_04.jpg" data-img="./img/group_04_big.jpg" alt="img">
+        </li>
+      </ul>
+
+      <div class="dimm">
+        <img src="./img/group_01_big.jpg" alt="big_img">
+      </div>
+
+    <script>
+      var item = $('.cards li')
+      var dimm = $('.dimm')
+      var dimmImg = dimm.find('img')
+
+      item.click(function(){
+        var dataImg = $(this).find('img').attr('data-img')
+        dimm.addClass('show')
+        dimmImg.attr('src', dataImg)
+      })
+      dimm.click(function(){
+        $(this).removeClass('show')
+      })
+    </script>
+  </body>
+</html>

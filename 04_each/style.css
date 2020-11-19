@@ -24,44 +24,46 @@ h1 {
   text-align: center;
 }
 
-.cards {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-}
-
-.cards li {
-  width: 32%;
-  cursor: pointer;
-  position: relative;
+.card {
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  margin: 0 auto;
   overflow: hidden;
 }
 
-.cards li img {
-  transition: all 0.3s;
+.card_photo {
+  position: relative;
 }
 
-.cards li.active img {
-  transform: scale(1.2);
+.card_info {
+  padding: 10px 16px 20px;
 }
 
-.cards li p {
+.sns {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  width: 50px;
+  height: 50px;
+  bottom: 12px;
+  right: 12px;
+}
+
+.sns span {
+  position: absolute;
   width: 100%;
-  height: 60px;
-  background: rgba(0, 0, 0, 0.3);
-  color: #eee;
-  line-height: 60px;
-  padding: 0 1rem;
-  opacity: 0;
+  height: 100%;
+  color: #fff;
+  font-size: 30px;
+  display: block;
+  line-height: 50px;
+  text-align: center;
+  top: 0;
+  left: 0;
 }
 
-.cards li:first-child p {
-  bottom: -60px;
-}
-
-.cards li:nth-child(3) p {
-  left: -100%;
+.sns span.share {
+  background: blue;
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
 }

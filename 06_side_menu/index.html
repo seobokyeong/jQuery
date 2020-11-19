@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>jQuery | side-menu</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>side-menu</h1>
+      <div class="side">
+        <div class="banner"></div>
+        <ul>
+          <li>html</li>
+          <li>css</li>
+          <li>js</li>
+          <li>jquery</li>
+          <li>vue</li>
+        </ul>
+        <div class="banner"></div>
+        <div class="banner"></div>
+        <div class="banner"></div>
+        <!-- 손잡이 -->
+        <div class="btn">
+          <!-- <i class="xi-angle-left-thin"></i> -->
+          <img src="./img/open.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var btn = $('.btn')
+      var side = $('.side')
+
+      btn.click(function () {
+        side.toggleClass('active')
+
+        if (side.hasClass('active')) {
+          // $(this).find('i').css('transform', 'rotate(180deg)')
+          $(this).find('img').attr('src', './img/close.png')
+        } else {
+          $(this).find('img').attr('src', './img/open.png')
+        }
+      })
+    </script>
+  </body>
+</html>
