@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <title>jquery modal</title>
+  </head>
+  <body>
+    <div class="container">
+      <button>Open modal</button>
+    </div>
+    <div class="dimm"></div>
+    <!-- 모달 -->
+    <div class="modal">
+      <h3>in modal</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat sequi
+        suscipit, sapiente, consectetur sunt repudiandae delectus nobis dicta
+        quibusdam temporibus tenetur asperiores odit. Rerum quos minima
+        deleniti, itaque explicabo esse.
+      </p>
+      <button>colse</button>
+    </div>
+
+    <script>
+      var openBtn = $('.container button')
+      var closeBtn = $('.modal button')
+      var dimm = $('.dimm')
+      var modal = $('.modal')
+
+      openBtn.click(function () {
+        dimm.show()
+        modal.show()
+      })
+
+      closeBtn.click(function () {
+        dimm.hide()
+        modal.hide()
+      })
+    </script>
+  </body>
+</html>

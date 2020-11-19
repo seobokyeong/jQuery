@@ -8,11 +8,20 @@
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
     <title>jQuery slick_slide</title>
   </head>
   <body>
     <div class="header">
-      <a href="#">로고</a>
+      <a href="#" class="logo">로고</a>
       <ul class="nav">
         <li><a href="#">홈</a></li>
         <li><a href="#">소개</a></li>
@@ -28,6 +37,12 @@
         <div class="item item_02"></div>
         <div class="item item_03"></div>
       </div>
+
+      <div class="arrow">
+        <span class="prev_btn"><i class="xi-angle-left-thin"></i></span>
+        <span class="next_btn"><i class="xi-angle-right-thin"></i></span>
+      </div>
+
       <div class="slide_text">
         <h4>안녕하세요</h4>
         <div class="line"><i class="xi-sun-o"></i></div>
@@ -41,9 +56,7 @@
     </div>
 
     <div class="content">
-      <h2>
-        국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다.
-      </h2>
+      <h2>국가원로자문회의의 법률로 정한다.</h2>
       <p>
         대통령이 궐위된 때 또는 대통령 당선자가 사망하거나 판결 기타의 사유로 그
         자격을 상실한 때에는 60일 이내에 후임자를 선거한다. 국정감사 및 조사에
@@ -70,6 +83,21 @@
         정하는 바에 의하여 국가가 변호인을 붙인다.
       </p>
     </div>
-    <script></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script>
+      $('.slide').slick({
+        dots: true,
+        autoplay: true,
+        speed: 600,
+        autoplaySpeed: 5000,
+        arrows: true,
+        prevArrow: $('.prev_btn'),
+        nextArrow: $('.next_btn')
+      })
+    </script>
   </body>
 </html>
