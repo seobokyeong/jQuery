@@ -10,18 +10,13 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="./style.css" />
-    <title>jQuery | sticky menu</title>
+    <title>jQuery | nav clone</title>
   </head>
   <body>
     <div class="container">
       <header class="header">
-        <h1>sticky menu</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit
-          adipisci numquam dolorem, ipsa fugit ratione, doloribus eius ex
-          debitis praesentium illo!
-        </p>
-        <div id="nav">
+        <div class="nav">
+          <div class="logo"><img src="./img/logo.svg" alt="" /></div>
           <ul class="gnb">
             <li>menu1</li>
             <li>menu2</li>
@@ -30,6 +25,10 @@
             <li>menu5</li>
             <li>menu6</li>
           </ul>
+          <div class="social">
+            <a href="#"><i class="xi-kakaotalk"></i></a>
+            <a href="#"><i class="xi-youtube-play"></i></a>
+          </div>
         </div>
       </header>
       <main>
@@ -95,16 +94,19 @@
       </main>
     </div>
     <script>
-      var nav = $('#nav')
-      var navOffSetValue = nav.offset().top
+      var header = $('.header')
+      var headerContent = header.contents().clone()
+      var header2 = $('<header class = "header2"></header>')
 
-      $(window).scroll(function () {
-        var scrollTopValue = $(document).scrollTop()
+      header2.append(headerContent)
+      header2.prependTo('.container')
 
-        if (scrollTopValue > navOffSetValue) {
-          nav.addClass('fixed')
+      var scrollValue = header.outerHeight() + 50
+      $(window).on('scroll', function () {
+        if ($(this).scrollTop() >= scrollValue) {
+          header2.addClass('show')
         } else {
-          nav.removeClass('fixed')
+          header2.removeClass('show')
         }
       })
     </script>
