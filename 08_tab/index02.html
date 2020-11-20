@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./style02.css" />
+    <title>jQuery | tab02</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>tab</h1>
+      <ul class="tab">
+        <li class="active"><a href="#">tab1</a></li>
+        <li><a href="#">tab2</a></li>
+        <li><a href="#">tab3</a></li>
+        <li><a href="#">tab4</a></li>
+      </ul>
+      <div class="content">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid,
+        blanditiis. Tempora voluptatibus maxime ab quos sequi numquam vero
+        possimus a explicabo ut alias repellat sunt iure facilis, voluptate cum
+        expedita?
+      </div>
+      <div class="content">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid,
+        blanditiis. Tempora voluptatibus maxime ab quos sequi numquam vero
+        possimus a explicabo ut alias repellat sunt iure facilis, voluptate cum
+        expedita?Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Aliquid, blanditiis. Tempora voluptatibus maxime ab quos sequi numquam
+        vero possimus a explicabo ut alias repellat sunt iure facilis, voluptate
+        cum expedita?
+      </div>
+      <div class="content">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid,
+        blanditiis. Tempora voluptatibus maxime ab quos sequi numquam vero
+        possimus a explicabo ut alias repellat sunt iure facilis, voluptate cum
+        expedita?Tempora voluptatibus maxime ab quos sequi numquam vero possimus
+        a explicabo ut alias repellat sunt iure facilis, voluptate cum expedita?
+      </div>
+      <div class="content">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid,
+        blanditiis. Tempora voluptatibus maxime ab quos sequi numquam vero
+        possimus a explicabo ut alias repellat sunt iure facilis, voluptate cum
+        expedita?Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Aliquid, blanditiis. Tempora voluptatibus maxime ab quos sequi numquam
+        vero possimus a explicabo ut alias repellat sunt iure facilis, voluptate
+        cum expedita? Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Aliquid, blanditiis. Tempora voluptatibus maxime ab quos sequi numquam
+        vero possimus a explicabo ut alias repellat sunt iure facilis, voluptate
+        cum expedita?
+      </div>
+    </div>
+    <script>
+      var btn = $('.tab li')
+      var content = $('.content')
+
+      btn.eq(0).find('a').addClass('active')
+      content.hide().eq(0).show()
+
+      btn.click(function () {
+        btn.removeClass('active')
+        $(this).addClass('active')
+
+        content.hide()
+
+        var activeIndex = $(this).index()
+        content.eq(activeIndex).show()
+
+        content.eq().show()
+      })
+    </script>
+  </body>
+</html>
